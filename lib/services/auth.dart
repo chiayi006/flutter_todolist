@@ -26,7 +26,6 @@ Stream<LoginUser?> get user {
       print(error.toString());
       return null;
     }
-    
   }
 
   // 註冊
@@ -39,7 +38,6 @@ Stream<LoginUser?> get user {
       print(error.toString());
       return null;
     }
-    
   }
 
   // 登出
@@ -50,6 +48,5 @@ Stream<LoginUser?> get user {
       print(error.toString());
       return null;
     }
-    
   }
 }
