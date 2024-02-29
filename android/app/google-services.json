@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "385584863257",
+    "project_id": "ivy-todolist-project",
+    "storage_bucket": "ivy-todolist-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385584863257:android:adc3aae3ce8a906a5c3288",
+        "android_client_info": {
+          "package_name": "com.example.flutter_todolist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALGDnDisK_UD44ppN3M_6eupfn3VGGP7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
