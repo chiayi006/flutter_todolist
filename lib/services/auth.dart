@@ -17,7 +17,7 @@ Stream<LoginUser?> get user {
 }
 
 // 登入
-  Future signInWithEmailAndPassword(String email, String password) async {
+  Future logInWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);

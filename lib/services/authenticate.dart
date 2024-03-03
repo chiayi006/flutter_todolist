@@ -3,7 +3,6 @@ import 'package:flutter_todolist/screens/register.dart';
 import 'package:flutter_todolist/screens/signin.dart';
 
 class Authenticate extends StatefulWidget {
-
   @override
   State<Authenticate> createState() => _AuthenticateState();
 }
@@ -17,13 +16,12 @@ class _AuthenticateState extends State<Authenticate> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-    if(showSignIn){
+    if (showSignIn) {
       return SignIn(toggleView: toggleView);
-    }else {
-      return Register(toggleView: toggleView,);
+    } else {
+      return Register(toggleView: toggleView);
     }
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todolist/screens/signin.dart';
 import 'package:flutter_todolist/services/auth.dart';
 import 'package:flutter_todolist/shared/decoration.dart';
 
@@ -23,7 +24,7 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('TodoList'),
+        title: Text('Register'),
         actions: <Widget>[
           TextButton.icon(onPressed: () => widget.toggleView(), icon: Icon(Icons.person), label: Text('登入'))
         ],
@@ -82,9 +83,10 @@ class _RegisterState extends State<Register> {
                           error = 'Could not sign in with those credentials';
                         });
                       } else {
-                        setState(() {
-                          error = '';
-                        });
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignIn(toggleView: widget.toggleView,)));
                       }
                     }
                   },

@@ -5,7 +5,8 @@ import 'package:flutter_todolist/services/login_user.dart';
 import 'package:flutter_todolist/services/login_user_binder.dart';
 
 class Wrapper extends StatelessWidget {
-  const Wrapper({Key? key}) : super(key: key);
+  const Wrapper({Key? key, required this.toggleView}) : super(key: key);
+  final Function toggleView;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class Wrapper extends StatelessWidget {
         if (!snapshot.hasData) {
           return Authenticate();
         } else {
-          return HomePage();
+          return HomePage(toggleView: toggleView);
         }
       },
     );

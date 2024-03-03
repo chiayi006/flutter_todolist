@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todolist/screens/homepage.dart';
 import 'package:flutter_todolist/services/auth.dart';
 import 'package:flutter_todolist/shared/decoration.dart';
 
@@ -23,9 +24,12 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('TodoList'),
+        title: Text('Sign In'),
         actions: <Widget>[
-          TextButton.icon(onPressed: () => widget.toggleView(), icon: Icon(Icons.person), label: Text('註冊'))
+          TextButton.icon(
+              onPressed: () => widget.toggleView(),
+              icon: Icon(Icons.person),
+              label: Text('註冊'))
         ],
       ),
       body: Container(
@@ -74,13 +78,18 @@ class _SignInState extends State<SignIn> {
                         _formKey.currentState!.validate()) {
                       print('email: $email');
                       print('password: $password');
-                      dynamic result = await _auth.signInWithEmailAndPassword(
+                      dynamic result = await _auth.logInWithEmailAndPassword(
                           email, password);
                       print(result);
                       if (result == null) {
                         setState(() {
                           error = 'Could not sign in with those credentials';
                         });
+                      } else {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage(toggleView: widget.toggleView,)));
                       }
                     }
                   },
